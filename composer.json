@@ -1,0 +1,27 @@
+{
+    "name": "rem42/scraper-dpd-trace",
+    "description": "API SOAP Trace dpd.com",
+    "require": {
+        "php": "^8.4",
+        "ext-dom": "*",
+        "ext-soap": "*",
+        "ext-mbstring": "*",
+        "wsdltophp/packagebase": "~5.0"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^13.1",
+        "rem42/php-cs-fixer-config": "^4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Scraper\\ScraperDPDTrace\\": "src/"
+        }
+    },
+    "scripts": {
+        "static-analysis": "./vendor/bin/phpstan analyse src --level=max --no-progress -vvv",
+        "code-style-check": "./vendor/bin/php-cs-fixer fix --dry-run --verbose",
+        "code-style-fix": "./vendor/bin/php-cs-fixer fix --using-cache=no",
+        "unit-test": "./vendor/bin/phpunit"
+    }
+}
